@@ -31,9 +31,6 @@ class OrdersModel {
 
         return result;
     }
-    
-    //UPDATE orders SET order_day = DAYOFYEAR(order_date), order_month = MONTH(order_date), order_year = YEAR(order_date), order_week = WEEKOFYEAR(order_date);
-
 }
 
 module.exports = new OrdersModel;

@@ -16,7 +16,7 @@ class OrdersController {
     };
 
     getOrderByProductId = async (req, res, next) => {
-        const ordersList = await ordersModel.findAll({ product_id: req.params.product_id });
+        const ordersList = await ordersModel.findAll({ product_id: req.params.id });
         if (!ordersList.length) {
             throw new HttpException(404, 'Orders not found');
         }
@@ -50,12 +50,6 @@ class OrdersController {
             affectedRows && changedRows ? 'Order updated successfully' : 'Updated faild';
 
         res.send({ message, info });
-    };
-
-    generateForecast = async (req, res, next) => {
-        //getall the rows for a particular item.
-        //conduct math
-        // 
     };
 }
 

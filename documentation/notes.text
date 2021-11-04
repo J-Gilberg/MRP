@@ -1,0 +1,2 @@
+Limitations: 
+- rest api cannot insert multiple records at once.  
