@@ -9,7 +9,7 @@ dotenv.config();
 class CalcsController {
 
     getCalcsByProductId = async (req, res, next) => {
-        const calcList = await calcsModel.findCalcs({ product_id: req.params.id });
+        const calcList = await calcsModel.findCalcs({ product_id: req.params.id , start: req.params.start , end: req.params.end});
         if (!calcList.length) {
             throw new HttpException(404, 'Calcs not found');
         }
@@ -17,7 +17,7 @@ class CalcsController {
     };
 
     getAllCalcs = async (req, res, next) => {
-        const calcList = await calcsModel.findCalcsAll();
+        const calcList = await calcsModel.findCalcs({order_date: req.params.date });
         res.send(calcList);
     };
 

@@ -7,8 +7,8 @@ const awaitHandlerFactory = require('../middleware/awaitHandlerFactory.middlewar
 
 // const { createUserSchema, updateUserSchema, validateLogin } = require('../middleware/validators/userValidator.middleware');
 
-router.get('/orders/productid/:id', awaitHandlerFactory(ordersController.getOrderByProductId)); // localhost:3000/api/orders/productid/1
-router.get('/orders/all', awaitHandlerFactory(ordersController.getAllOrders)); // localhost:3000/api/orders/all
+router.get('/productid/:id', awaitHandlerFactory(ordersController.getOrderByProductId)); // localhost:3000/api/orders/productid/1
+router.get('/all', awaitHandlerFactory(ordersController.getAllOrders)); // localhost:3000/api/orders/all
 
 // router.get('/', auth(), awaitHandlerFactory(userController.getAllUsers)); // localhost:3000/api/v1/users // need to modify this.
 // router.get('/id/:id', auth(), awaitHandlerFactory(userController.getUserById)); // localhost:3000/api/v1/users/id/1

@@ -4,6 +4,7 @@ const cors = require("cors");
 const HttpException = require('./utils/HttpException.utils');
 const errorMiddleware = require('./middleware/error.middleware');
 const ordersRouter = require('./routes/orders.route');
+const calcsRouter = require('./routes/calcs.route');
 
 // Init express
 const app = express();
@@ -19,7 +20,8 @@ app.options("*", cors());
 
 const port = Number(process.env.PORT || 3331);
 
-app.use(`/api`, ordersRouter);
+app.use(`/api/orders`, ordersRouter);
+app.use(`/api/calcs`, calcsRouter);
 
 // 404 error
 app.all('*', (req, res, next) => {
