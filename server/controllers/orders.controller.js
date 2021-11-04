@@ -1,30 +1,30 @@
-const UserModel = require('../models/orders.model');
+const ordersModel = require('../models/orders.model');
 const HttpException = require('../utils/HttpException.utils');
 // const { validationResult } = require('express-validator');
 // const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 dotenv.config();
 
-class OrdersConroller {
+class OrdersController {
     getAllOrders = async (req, res, next) => {
-        let ordersList = await OrderModel.find();
-        if (ordersList.length) {
+        let ordersList = await ordersModel.find();
+        if (!ordersList.length) {
             throw new HttpException(404, 'Orders not found');
         }
         res.send(ordersList);
     };
 
     getOrderByProductId = async (req, res, next) => {
-        const ordersList = await OrderModel.findAll({ product_id: req.params.product_id });
-        if (ordersList.length) {
+        const ordersList = await ordersModel.findAll({ product_id: req.params.product_id });
+        if (!ordersList.length) {
             throw new HttpException(404, 'Orders not found');
         }
         res.send(ordersList);
     };S
 
     createOrder = async (req, res, next) => {
-        const result = await UserModel.create(req.body);
+        const result = await ordersModel.create(req.body);
 
         if (!result) {
             throw new HttpException(500, 'Something went wrong');
@@ -38,7 +38,7 @@ class OrdersConroller {
 
         // do the update query and get the result
         // it can be partial edit
-        const result = await UserModel.update(restOfUpdates, req.params.id);
+        const result = await ordersModel.update(restOfUpdates, req.params.id);
 
         if (!result) {
             throw new HttpException(404, 'Something went wrong');
@@ -51,8 +51,15 @@ class OrdersConroller {
 
         res.send({ message, info });
     };
+
+    generateForecast = async (req, res, next) => {
+        //getall the rows for a particular item.
+        //conduct math
+        // 
+    };
 }
 
+module.exports = new OrdersController;
 
 
 
@@ -195,4 +202,3 @@ class OrdersConroller {
 /******************************************************************************
  *                               Export
  ******************************************************************************/
-module.exports = new OrdersController;

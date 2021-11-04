@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const cors = require("cors");
 const HttpException = require('./utils/HttpException.utils');
 const errorMiddleware = require('./middleware/error.middleware');
-const userRouter = require('./routes/orders.route');
+const ordersRouter = require('./routes/orders.route');
 
 // Init express
 const app = express();
@@ -19,7 +19,7 @@ app.options("*", cors());
 
 const port = Number(process.env.PORT || 3331);
 
-app.use(`/api`, userRouter);
+app.use(`/api`, ordersRouter);
 
 // 404 error
 app.all('*', (req, res, next) => {
