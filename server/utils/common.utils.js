@@ -30,8 +30,7 @@ exports.multipleColumnSetWithDateRange = (object) => {
             tempArr.push(`${key} = ?`);
         }
         });
-    console.log(tempArr);
-    let columnSet = tempArr.join(', ');
+    let columnSet = tempArr.join(' and ');
     console.log(columnSet);
     console.log(keys);
     return {
