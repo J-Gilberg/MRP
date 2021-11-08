@@ -1,5 +1,5 @@
 UPDATE order_calcs
-SET xy = quantity*order_unix, xsqr = quantity*quantity, ysqr = order_unix*order_unix;
+SET xy = quantity*order_unix, xsqr = quantity*quantity, ysqr = order_unix*order_unix, xcube = xcube = quantity*quantity*quantity;
 
 
 CREATE TRIGGER order_calcs_data AFTER INSERT ON orders
