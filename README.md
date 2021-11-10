@@ -2,7 +2,7 @@ Having some fun with Statistics and Linear Algebra! Woo!!
 
 This is the start of a project I really wanted to build in my previous supply chain management roles to improve the efficiency and effectiveness of demand and supply planning. 
 
-Material Requirements Planning is the process of determing how much of something you need to accomplish your goal. 
+Material Requirements Planning (MRP) is the process of determing how much of something you need to accomplish your goal. 
 This system is build for direct/indirect physical goods distribution or usage. 
 
 Tech:
@@ -22,6 +22,7 @@ MVP:
 Addional features:
 - Want to all the user to be able to manually modify the outputs and recommendations.
 - The user should be able to save their purchasing plan and turn it into actual purchases.
+- Add Multiple Regression.
 
 
 ******************************REACT APP STUFF******************************
