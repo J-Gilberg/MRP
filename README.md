@@ -1,6 +1,6 @@
 Having some fun with Statistics and Linear Algebra! Woo!!
 
-This is the start of a project I really wanted to build in my previous supply chain management roles. 
+This is the start of a project I really wanted to build in my previous supply chain management roles to improve the efficiency and effectiveness of demand and supply planning. 
 
 Material Requirements Planning is the process of determing how much of something you need to accomplish your goal. 
 This system is build for direct/indirect physical goods distribution or usage. 
