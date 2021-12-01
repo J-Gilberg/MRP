@@ -6,17 +6,11 @@ import CriticalItems from './views/CriticalItems';
 import Planning from './views/Planning';
 import Receiving from './views/Receiving';
 import Tabs from './components/Tabs';
-import {generateCREquation} from './components/GenerateForecast';
 
 
 import './App.css';
 
 function App() {
-  useEffect(() => {
-    generateCREquation({start:'2014/01/01', end:'2015/01/01', product_id: 228});
-
-  }, []);
-
   return (
       <div className="App background">
         <Tabs />
