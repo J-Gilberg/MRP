@@ -189,7 +189,7 @@ export const generateCREquation = (inputs) => {
                 return coefficients;
             })
             .catch((error) => {
-                console.log(error);
+                return error;
             });
     }
 
